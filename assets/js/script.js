@@ -1,11 +1,14 @@
 $(document).ready(function () {
+
     //Moment.js code for date and time - cited; W3Schools...
+
     let NowMoment = moment().format("MMMM Do YYYY");
     let displayDate = document.getElementById("currentDay");
     displayDate.innerHTML = NowMoment;
     let currentHour = moment().format("HH");
 
     // Button function to clear local storage and clear contents
+
     $("#clearFieldsBtn").click(function (event) {
         event.preventDefault;
         $("textarea").val("");
@@ -13,6 +16,7 @@ $(document).ready(function () {
     });
 
     //gets hour from each time slot and compares it to actual time
+
     $(".time-div").each(function () {
         var timeDiv = $(this).attr("id").split("-")[1];
 
@@ -29,12 +33,15 @@ $(document).ready(function () {
     });
 
     //grab values from time & save them in lS --
+
     $(".saveBtn").click(function (event) {
         event.preventDefault();
         var value = $(this).siblings(".time-block").val();
         var time = $(this).parent().attr("id").split("-")[1];
         localStorage.setItem(time, value);
     });
+
+
 
     //get items from lS and arranges them in order --
     $("#hour-09 .time-block").val(localStorage.getItem("09"));
