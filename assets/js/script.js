@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    //Moment.js code for current date and time
+    //Moment.js code for date and time - cited; W3Schools...
     let NowMoment = moment().format("MMMM Do YYYY");
     let displayDate = document.getElementById("currentDay");
     displayDate.innerHTML = NowMoment;
@@ -28,7 +28,7 @@ $(document).ready(function () {
         }
     });
 
-    //grab values from time & save them in lS
+    //grab values from time & save them in lS --
     $(".saveBtn").click(function (event) {
         event.preventDefault();
         var value = $(this).siblings(".time-block").val();
@@ -36,7 +36,7 @@ $(document).ready(function () {
         localStorage.setItem(time, value);
     });
 
-    //get items from lS and arranges them in order
+    //get items from lS and arranges them in order --
     $("#hour-09 .time-block").val(localStorage.getItem("09"));
     $("#hour-10 .time-block").val(localStorage.getItem("10"));
     $("#hour-11 .time-block").val(localStorage.getItem("11"));
